@@ -1,0 +1,17 @@
+/* This downloads the same git repository twice. */
+
+pipeline {
+  agent any
+  stages {
+    stage ('Dev') {
+      steps {
+        git 'https://github.com/AdminTurnedDevOps/go-webapp-sample.git'      
+      }
+    }
+    stage ('UAT') {
+      steps {        
+        git 'https://github.com/AdminTurnedDevOps/go-webapp-sample.git'
+      }
+    }
+  }
+}
