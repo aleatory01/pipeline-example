@@ -1,0 +1,37 @@
+def Hello(name)
+{
+  echo "Hello ${name}"
+}
+
+pipeline {
+    agent any
+    stages 
+    {
+/*******************************/
+      stage('Hello world!') 
+      {
+        steps
+        {
+          echo 'Hello world'
+        }
+      }
+
+/*******************************/
+      stage ('Show os information')
+      {
+        steps
+        {
+          sh 'cat /etc/os-release'
+        }
+      }
+
+/*******************************/
+      stage ('Hello again')
+      {
+        steps
+        {
+          Hello('John')
+        }
+      }
+    }
+}
