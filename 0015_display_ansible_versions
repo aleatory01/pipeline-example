@@ -1,0 +1,21 @@
+/* This Jenkins pipeline will display ansbile versions.
+   Ansible needs to be installed before running this job. */
+
+pipeline
+{
+  agent any
+  stages
+  {
+    stage ( 'Hello' )
+	  { 
+	    steps
+	    {
+	      sh '''
+		    ansible --version
+		    ansible-playbook --version
+		    ansible-galaxy --version
+		  '''
+	    }
+	  }
+  }
+}
