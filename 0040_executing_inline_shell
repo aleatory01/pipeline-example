@@ -1,0 +1,13 @@
+// https://qiita.com/miyamadoKL/items/e564d82767ccda28e43e
+pipeline {
+    agent any
+    stages {
+        stage('Test') {
+            steps {
+                sh '''#!/bin/bash
+                    echo "Hello world!"
+                '''
+            }
+        }
+    }
+}
